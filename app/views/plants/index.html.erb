@@ -1,0 +1,39 @@
+<div class='page-header'>
+  <div class='container'>
+    <h1>Plants</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-heading'>
+      <h2>All Plants</h2>
+    </div>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default'>
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Green</th>
+            <th>Flowering</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%- @plants.each do |plant| %>
+            <tr>
+              <td><%= plant.name %></td>
+              <td><%= plant.is_green ? 'Yes' : 'No' %></td>
+              <td><%= plant.is_flowering ? 'Yes' : 'No'%></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
