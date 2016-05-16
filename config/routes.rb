@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   root 'cabinets#index'
 
-  resources :cabinets, only: [:index, :edit, :update]
+  resources :cabinets, only: [:index, :edit, :update] do
+    collection do 
+      get :cabinet_type
+    end
+  end
 
   resources :species, only: :index
 

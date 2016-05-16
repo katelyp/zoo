@@ -18,6 +18,15 @@ class CabinetsController < ApplicationController
     end
   end
 
+  def cabinet_type
+    if params[:type] == 'Animal'
+      @type = Animal.all
+    else
+      @type = Plant.all
+    end
+    @type.map { |type| [type.id, type.name] }
+  end
+
   private
 
   def prepare_cabinet
