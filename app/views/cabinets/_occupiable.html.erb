@@ -2,27 +2,60 @@
 
 <%- if cabinet.occupiable_type == 'Plant' %>
 
-  <h4>
-    Species:
-    <strong><%= link_to cabinet.occupiable.name, plant_path(cabinet.occupiable) %></strong>
-    <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>
-  </h4>
+  <div class='panel-body table-responsive'>
+    <table class='table table-default'>
+      <tbody>
 
-  <p>Green: <%= cabinet.occupiable.is_green ? 'Yes' : 'No' %></p> 
+      <tr>
+        <th>Species</th>
+        <td>
+          <strong><%= link_to cabinet.occupiable.name, plant_path(cabinet.occupiable) %></strong>
+          <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>  
+        </td>
+      </tr>
 
-  <p>Flowering: <%= cabinet.occupiable.is_flowering ? 'Yes' : 'No' %></p> 
+      <tr>
+        <th>Green</th>
+        <td><%= cabinet.occupiable.is_green ? 'Yes' : 'No' %></td>
+      </tr>
+
+      <tr>
+        <th>Flowering</th>
+        <td><%= cabinet.occupiable.is_flowering ? 'Yes' : 'No' %></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
 
 <!-- if cabinet is occupied by Animal -->
 
 <%- else %>
 
-  <h4>
-    <strong><%= link_to cabinet.occupiable.name, animal_path(cabinet.occupiable) %></strong>
-    <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>    
-  </h4>
+  <div class='panel-body table-responsive'>
+    <table class='table table-default'>
+      <tbody>
 
-  <p>Gender: <%= cabinet.occupiable.gender %></p> 
+      <tr>
+        <th>Species</th>
+        <td>
+          <strong><%= link_to cabinet.occupiable.name, animal_path(cabinet.occupiable) %></strong>
+          <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>  
+        </td>
+      </tr>
 
-  <p>No. of Legs: <%= cabinet.occupiable.legs %></p> 
+      <tr>
+        <th>Type</th>
+        <td><%= cabinet.occupiable.type %></td>
+      </tr>
+
+      <tr>
+        <th>No. of Legs</th>
+        <td><%= cabinet.occupiable.legs %></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
 
 <%- end %>

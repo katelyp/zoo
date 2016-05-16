@@ -1,0 +1,32 @@
+.panel.panel-default {
+
+  border-radius: 2px;
+
+  .panel-heading {
+
+    background-color: #fafafa;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+
+  }
+
+  .panel-body {
+
+    .box {
+      border: 1px solid black; 
+      height: 200px;
+    }
+
+    h3 {
+      font-size: 30px;
+      color: maroon;
+      text-align: center;
+    }
+
+    h4 {
+      margin-top: 25px;
+    }
+
+  }
+
+}
