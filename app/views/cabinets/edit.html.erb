@@ -8,12 +8,23 @@
   <div class='panel panel-default'>
     <%= simple_form_for @cabinet do |f| %>
 
-      <div class='panel-heading'>
-        <h2>Occupied by</h2>
+      <div class='panel-body' id='plant'>
+        <%= f.input :occupiable_id, label: 'Add Plant', collection: Plant.all %>
+        <%= f.hidden_field :occupiable_type, value: 'Plant' %>
       </div>
 
-      <div class='panel-body'>
-        <%= f.input :occupiable, collection: Plant.all %>
+      <div class='panel-footer'>
+        <%= link_to 'Back', cabinets_path, class: 'btn btn-default' %>
+        <%= f.submit 'Save Changes', class: 'btn btn-primary pull-right' %>
+      </div>
+
+    <%- end %>
+
+    <%= simple_form_for @cabinet do |f| %>
+
+      <div class='panel-body' id='animal'>
+        <%= f.input :occupiable_id, label: 'Add Animal', collection: Animal.all %>
+        <%= f.hidden_field :occupiable_type, value: 'Animal' %>
       </div>
 
       <div class='panel-footer'>

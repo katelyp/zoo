@@ -2,7 +2,11 @@
 
 <%- if cabinet.occupiable_type == 'Plant' %>
 
-  <p><%= link_to cabinet.occupiable.name, plant_path(cabinet.occupiable) %></p>
+  <h4>
+    Species:
+    <strong><%= link_to cabinet.occupiable.name, plant_path(cabinet.occupiable) %></strong>
+    <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>
+  </h4>
 
   <p>Green: <%= cabinet.occupiable.is_green ? 'Yes' : 'No' %></p> 
 
@@ -12,7 +16,10 @@
 
 <%- else %>
 
-  <p><%= link_to cabinet.occupiable.name, animal_path(cabinet.occupiable) %></p>
+  <h4>
+    <strong><%= link_to cabinet.occupiable.name, animal_path(cabinet.occupiable) %></strong>
+    <%= link_to 'Edit', edit_cabinet_path(cabinet), class: 'btn btn-sm btn-primary pull-right' %>    
+  </h4>
 
   <p>Gender: <%= cabinet.occupiable.gender %></p> 
 
