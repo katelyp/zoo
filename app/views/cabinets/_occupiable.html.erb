@@ -1,0 +1,21 @@
+<!-- if cabinet is occupied by Plant -->
+
+<%- if cabinet.occupiable_type == 'Plant' %>
+
+  <p><%= link_to cabinet.occupiable.name, plant_path(cabinet.occupiable) %></p>
+
+  <p>Green: <%= cabinet.occupiable.is_green ? 'Yes' : 'No' %></p> 
+
+  <p>Flowering: <%= cabinet.occupiable.is_flowering ? 'Yes' : 'No' %></p> 
+
+<!-- if cabinet is occupied by Animal -->
+
+<%- else %>
+
+  <p><%= link_to cabinet.occupiable.name, animal_path(cabinet.occupiable) %></p>
+
+  <p>Gender: <%= cabinet.occupiable.gender %></p> 
+
+  <p>No. of Legs: <%= cabinet.occupiable.legs %></p> 
+
+<%- end %>

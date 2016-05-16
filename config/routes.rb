@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :cabinets, only: [:index, :new, :create]
+  resources :cabinets, only: [:index, :edit, :update]
 
-  resources :plants, only: :index
+  resources :species, only: :index
 
-  resources :animals, only: :index
+  resources :plants, only: :show
+
+  resources :animals, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

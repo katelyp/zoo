@@ -1,0 +1,53 @@
+<div class='page-header'>
+  <div class='container'>
+    <h1><%= @animal.name %></h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-heading'>
+      <h4>General Information</h4>
+    </div>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default'>
+
+        <tbody>
+
+          <tr>
+            <th>Gender</th>
+            <td><%= @animal.gender %></td>
+          </tr>
+        
+          <tr>
+            <th>No. of Legs</th>
+            <td><%= @animal.legs %></td>
+          </tr>
+        
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-heading'>
+      <h4>Which Cabinets to find me</h4>
+    </div>
+
+    <div class='panel-body table-responsive'>
+      <ul>
+        <%- @animal.cabinets.each do |cabinet| %>
+          <li><%= cabinet.name %></li>
+        <%- end %>
+      </ul>
+    </div>
+
+  </div>
+</div>
