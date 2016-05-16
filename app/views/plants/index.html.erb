@@ -1,0 +1,35 @@
+<div class='page-header'>
+  <div class='container'>
+    <h1>All Plants</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default'>
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Flowering</th>
+            <th>No. of Legs</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%- @plants.each do |plant| %>
+            <tr>
+              <td><%= link_to plant.name, plant_path(plant) %></td>
+              <td><%= plant.is_green ? 'Yes' : 'No' %></td>
+              <td><%= plant.is_flowering ? 'Yes' : 'No'%></td>
+            </tr>
+          <% end %>
+        </tbody>
+        
+      </table>
+    </div>
+
+  </div>
+</div>

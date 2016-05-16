@@ -1,19 +1,17 @@
 <div class='page-header'>
   <div class='container'>
-    <h1>Zoo Box</h1>
+    <h2><strong>Cabinets</strong></h2>
   </div>
 </div>
 
 <div class='container'>
   <div class='panel panel-default'>
 
-    <div class='panel-heading'>
-      <h2>Cabinets</h2>
-    </div>
-
     <div class='panel-body'>
       <div class='row'>
+
         <%- @cabinets.each do |cabinet| %>
+
           <div class='col-md-4 box'>
 
             <h3><%= cabinet.name %></h3>
@@ -21,15 +19,28 @@
             <%- if !cabinet.occupiable.nil? %>
               <%= render partial: 'occupiable', object: cabinet.occupiable, locals: { cabinet: cabinet } %>
             <%- else %>
-              <h4>
-                Species: 
-                <%= link_to 'Add', edit_cabinet_path(cabinet), class: 'btn btn-success btn-sm pull-right' %>
-              </h4>
+
+              <div class='panel-body table-responsive'>
+                <table class='table table-default'>
+                  <tbody>
+
+                    <tr>
+                      <th>Species</th>
+                      <td>
+                        <%= link_to 'Add', edit_cabinet_path(cabinet), class: 'btn btn-success btn-sm pull-right' %>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
             <%- end %>
 
           </div>
 
         <% end %>
+
       </div>
     </div>
 

@@ -1,12 +1,10 @@
 .panel.panel-default {
 
-  border-radius: 2px;
-
+  border: none;
+  
   .panel-heading {
 
-    background-color: #fafafa;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    background-color: white;
 
   }
 
@@ -14,7 +12,8 @@
 
     .box {
       border: 1px solid black; 
-      height: 200px;
+      height: 225px;
+      background-color: #f2ffe5;
     }
 
     h3 {

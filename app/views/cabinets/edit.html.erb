@@ -9,8 +9,8 @@
     <%= simple_form_for @cabinet do |f| %>
 
       <div class='panel-body'>
-        <%= f.input :occupiable_type, label: 'Species', collection: ['Animal', 'Plant'], include_blank: 'Select a Species', selected: nil %>
-        <%= f.input :occupiable_id, label: 'Choose', collection: [] %>
+        <%= f.input :occupiable_type, label: '1. Species', collection: ['Animal', 'Plant'], include_blank: 'Select a Species', selected: nil, wrapper_html: { class: 'col-md-4' } %>
+        <%= f.input :occupiable_id, label: '2. Name', collection: [], wrapper_html: { class: 'col-md-4' } %>
       </div>
 
       <div class='panel-footer'>
