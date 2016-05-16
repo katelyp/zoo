@@ -16,7 +16,6 @@ class CabinetsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private

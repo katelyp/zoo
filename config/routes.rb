@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'cabinets#index'
+
   resources :cabinets, only: [:index, :edit, :update]
 
   resources :species, only: :index
