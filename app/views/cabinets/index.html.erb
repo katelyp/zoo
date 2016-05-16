@@ -1,0 +1,37 @@
+<div class='page-header'>
+  <div class='container'>
+    <h1>Cabinets</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default' style='width: 500px'>
+
+        <tbody>
+          <%- @cabinets.each do |cabinet| %>
+            <tr>
+              <td style='border: 1px solid black'>
+
+                  <h4><%= cabinet.name %></h4>
+
+                  <%- if !cabinet.occupiable.nil? %>
+                    <%= render partial: 'occupiable', object: cabinet.occupiable, locals: { cabinet: cabinet } %>
+                  <%- else %>
+                    <p>
+                      <%= link_to 'Add Species', edit_cabinet_path(cabinet), class: 'btn btn-success' %>
+                    </p>
+                  <%- end %>
+
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>

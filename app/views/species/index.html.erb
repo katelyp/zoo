@@ -1,0 +1,73 @@
+<div class='page-header'>
+  <div class='container'>
+    <h1>All Species</h1>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-heading'>
+      <h2>Plants</h2>
+    </div>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default'>
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Green</th>
+            <th>Flowering</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%- @plants.each do |plant| %>
+            <tr>
+              <td><%= link_to plant.name, plant_path(plant) %></td>
+              <td><%= plant.is_green ? 'Yes' : 'No' %></td>
+              <td><%= plant.is_flowering ? 'Yes' : 'No'%></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<div class='container'>
+  <div class='panel panel-default'>
+
+    <div class='panel-heading'>
+      <h2>Animals</h2>
+    </div>
+
+    <div class='panel-body table-responsive'>
+      <table class='table table-default'>
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>No. of Legs</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <%- @animals.each do |animal| %>
+            <tr>
+              <td><%= link_to animal.name, animal_path(animal) %></td>
+              <td><%= animal.gender %></td>
+              <td><%= animal.legs %></td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
